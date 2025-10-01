@@ -5,7 +5,7 @@
  */
 package universidad_gp1;
 
-import Modelo.conexion;
+import Modelo.myConexion;
 
 /**
  *
@@ -17,9 +17,9 @@ public class Universidad_Gp1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-     //objeto tipo conexion
+     //objeto tipo myConexion
      
-    conexion conn = new conexion("jdbc:mysql://localhost/universidad_grupo1", "root", "");
+    myConexion conn = new myConexion("jdbc:mysql://localhost/universidad_grupo1", "root", "");
     
     }
     

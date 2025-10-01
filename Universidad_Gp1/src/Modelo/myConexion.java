@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 /**
  * @author Santy
  */
-public class conexion {
+public class myConexion {
    //CARGAR DRIVER DE CONEXION
     
     private String URL;
@@ -20,7 +20,7 @@ public class conexion {
     
     private static Connection conexion =  null;
 
-    public conexion(String URL, String usuario, String password) {
+    public myConexion(String URL, String usuario, String password) {
         this.URL = URL;
         this.usuario = usuario;
         this.password = password;
