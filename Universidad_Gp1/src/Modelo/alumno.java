@@ -5,6 +5,7 @@
  */
 package Modelo;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -19,18 +20,31 @@ public class alumno {
     int dni;
     String apellido;
     String nombre;
-    Date fechaNacimiento;
+    LocalDate fechaNacimiento;
     int estado;
 
-    public alumno(int idAlumno, int dni, String apellido, String nombre, Date fechaNacimiento, int estado) {
+    public alumno() {
+    }
+
+    
+    public alumno(int idAlumno, int dni, String apellido, String nombre, LocalDate fecha, int estado) {
         this.idAlumno = idAlumno;
         this.dni = dni;
         this.apellido = apellido;
         this.nombre = nombre;
-        this.fechaNacimiento = fechaNacimiento;
+        this.fechaNacimiento = fecha;
         this.estado = estado;
     }
 
+    public alumno(int dni, String apellido, String nombre, LocalDate fecha, int estado) {
+        this.dni = dni;
+        this.apellido = apellido;
+        this.nombre = nombre;
+        this.fechaNacimiento = fecha;
+        this.estado = estado;
+    }
+
+    
     public int getIdAlumno() {
         return idAlumno;
     }
@@ -63,11 +77,11 @@ public class alumno {
         this.nombre = nombre;
     }
 
-    public Date getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -77,6 +91,11 @@ public class alumno {
 
     public void setEstado(int estado) {
         this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return "alumno{" + "idAlumno=" + idAlumno + ", dni=" + dni + ", apellido=" + apellido + ", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", estado=" + estado + '}';
     }
     
     

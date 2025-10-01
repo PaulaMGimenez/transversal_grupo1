@@ -5,7 +5,10 @@
  */
 package universidad_gp1;
 
+import Modelo.alumno;
 import Modelo.myConexion;
+import Percistencia.alumnoData;
+import java.time.LocalDate;
 
 /**
  *
@@ -19,7 +22,11 @@ public class Universidad_Gp1 {
     public static void main(String[] args) {
      //objeto tipo myConexion
      
-    myConexion conn = new myConexion("jdbc:mysql://localhost/universidad_grupo1", "root", "");
+    alumno brayan = new alumno(2, 42278291, "Arce", "Brayan", LocalDate.of(1999, 12, 16), 1);
+    
+    alumnoData alu = new alumnoData();
+    
+    alu.guardarAlumno(brayan);
     
     }
     

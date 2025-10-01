@@ -14,32 +14,26 @@ import javax.swing.JOptionPane;
 public class myConexion {
    //CARGAR DRIVER DE CONEXION
     
-    private String URL;
-    private String usuario;
-    private String password;
+  
     
-    private static Connection conexion =  null;
-
-    public myConexion(String URL, String usuario, String password) {
-        this.URL = URL;
-        this.usuario = usuario;
-        this.password = password;
-    }
+    private static Connection con;
+   
     
-    public Connection buscarConexion(){
-    if(conexion == null){
+    public static Connection buscarConexion(){
+    if(con == null){
         
         try {
             Class.forName("org.mariadb.jdbc.Driver");
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/construirsa_tp9", "root", "");
+            con = DriverManager.getConnection("jdbc:mariadb://localhost/universidad_grupo1", "root", "");
+            JOptionPane.showMessageDialog(null, "Base de datos conectada exitosamente");
         } catch (ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(null, "No se puede conectar o cargar driver" + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al cargar los Driver de conexion" + ex.getMessage());
         } catch (SQLException e){
-            JOptionPane.showMessageDialog(null, "No se puede conectar" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al conectar base de datos" + e.getMessage());
         }
     
     }
-    return conexion;
+    return con;
     }
 
 }
