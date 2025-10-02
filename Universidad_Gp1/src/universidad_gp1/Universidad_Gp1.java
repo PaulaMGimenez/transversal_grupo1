@@ -26,7 +26,9 @@ public class Universidad_Gp1 {
     
     alumnoData alu = new alumnoData();
     
-    alu.guardarAlumno(brayan);
+    //alu.guardarAlumno(brayan);
+    
+    alu.actualizarAlumno(brayan);
     
     }
     

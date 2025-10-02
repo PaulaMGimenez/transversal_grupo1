@@ -14,6 +14,8 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -53,6 +55,32 @@ public class alumnoData {
                 }
                 ps.close();
             System.out.println("Guardado");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla alumno");
+        }
+    }
+    
+    public void actualizarAlumno(alumno a){
+            
+            String query = "UPDATE alumno SET dni= ?, apellido = ?, nombre = ?, fechaNacimiento = ?, estado = ? "
+                    + "WHERE idAlumno = ?";
+            
+        try {
+            PreparedStatement ps= conn.prepareStatement(query);
+            
+            ps.setInt(1, a.getDni());
+            ps.setString(2, a.getApellido());
+            ps.setString(3, a.getNombre());
+            ps.setDate(4, Date.valueOf(a.getFechaNacimiento()));
+            ps.setInt(5, a.getEstado());
+            ps.setInt(6, a.getIdAlumno());
+            
+            int actualizado = ps.executeUpdate();
+            
+            if(actualizado == 1){
+                JOptionPane.showMessageDialog(null, "Datos del alumno actualizado correctamente");
+            }
+            
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla alumno");
         }
