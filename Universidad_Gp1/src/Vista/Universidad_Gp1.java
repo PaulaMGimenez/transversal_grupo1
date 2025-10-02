@@ -70,6 +70,23 @@ public class Universidad_Gp1 {
         for (alumno a: listaActivos){
             System.out.println(a);
         }
+        
+        
+        
+        alu.darBaja(2);
+                
+         List<alumno> listaActivos2 = alu.listarAlumnosActivos();
+        
+        System.out.println("------- alumnos activos--------");
+        
+        
+        
+        for (alumno a: listaActivos2){
+            System.out.println(a);
+        }
+        
+        
+        
     }
     
 }

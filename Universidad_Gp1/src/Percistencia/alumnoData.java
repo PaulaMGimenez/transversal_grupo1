@@ -158,4 +158,22 @@ public class alumnoData {
         }
         return alumnos;
 }
+    
+    public void darBaja(int idAlumno){
+          String query = "UPDATE alumno SET estado = 0 WHERE idAlumno = ?";
+          
+          try{
+             PreparedStatement ps= conn.prepareStatement(query);
+             ps.setInt(1, idAlumno); //Le damos el valor
+             int actualisado = ps.executeUpdate(); // Nos da el valor de las filas modificadas
+             if(actualisado == 1){
+                JOptionPane.showMessageDialog(null, "Alumno dado de baja correctamente");
+             }else{
+                JOptionPane.showMessageDialog(null, "No se encontro al alumno con ese ID");
+             }
+             ps.close();
+          }catch(SQLException ex){
+             JOptionPane.showMessageDialog(null, "Error al dar de baja al alumno");
+          }
+    }
 }
