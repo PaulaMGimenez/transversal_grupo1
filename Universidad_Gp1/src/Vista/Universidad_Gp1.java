@@ -9,6 +9,7 @@ import Modelo.alumno;
 import Modelo.myConexion;
 import Percistencia.alumnoData;
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  *
@@ -24,27 +25,51 @@ public class Universidad_Gp1 {
      
     //alumno brayan = new alumno(2, 42278291, "Arce", "Brayan", LocalDate.of(1999, 12, 16), 1);
     
-    //alumnoData alu = new alumnoData();
+    alumnoData alu = new alumnoData();
     
     //alu.guardarAlumno(brayan);
     
     //alu.actualizarAlumno(brayan);
-    
-//    alumno jonatan = new alumno(2, 39092552, "Aguero", "Jonatan", LocalDate.of(1995, 9, 10), 1);
+   //   alumno jonatan = new alumno(3, 39092552, "Aguero", "Jonatan", LocalDate.of(1995, 9, 10), 1);
 //    
-//    alumnoData alu2 = new alumnoData();
-//    
-//    alu2.guardarAlumno(jonatan);
+  // alumnoData alu2 = new alumnoData();
+   //  alu2.guardarAlumno(jonatan);
     
     //alu2.actualizarAlumno(jonatan);
     
-    alumno eduardo = new alumno(4, 24681663, "Giménez", "Héctor", LocalDate.of(1975, 11, 19), 1);
+   // alumno eduardo = new alumno(4, 24681663, "Giménez", "Héctor", LocalDate.of(1975, 11, 19), 1);
     
-    alumnoData alu4 = new alumnoData();
+  //  alumnoData alu4 = new alumnoData();
     
-    alu4.guardarAlumno(eduardo);
+  //  alu4.guardarAlumno(eduardo);
     
     //alu4.actualizarAlumno(eduardo);
+    
+    
+    
+    
+     //-----PRUEBO  BUSCAR UN ALUMNO POR DNI 
+    
+     alumno encontrado= alu.buscarAlumnonDni(42278291);
+     
+     if(encontrado !=null){
+         System.out.println("Alumno encontrado: "+encontrado);
+     }
+     
+     
+     
+     
+     //-------- LISTAR ALUMNOS ACTIVOS------
+     
+        List<alumno> listaActivos = alu.listarAlumnosActivos();
+        
+        System.out.println("------- alumnos activos--------");
+        
+        
+        
+        for (alumno a: listaActivos){
+            System.out.println(a);
+        }
     }
     
 }
