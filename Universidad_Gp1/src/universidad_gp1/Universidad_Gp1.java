@@ -22,14 +22,21 @@ public class Universidad_Gp1 {
     public static void main(String[] args) {
      //objeto tipo myConexion
      
-    alumno brayan = new alumno(2, 42278291, "Arce", "Brayan", LocalDate.of(1999, 12, 16), 1);
+    //alumno brayan = new alumno(2, 42278291, "Arce", "Brayan", LocalDate.of(1999, 12, 16), 1);
     
-    alumnoData alu = new alumnoData();
+    //alumnoData alu = new alumnoData();
     
     //alu.guardarAlumno(brayan);
     
-    alu.actualizarAlumno(brayan);
+    //alu.actualizarAlumno(brayan);
     
+    alumno jonatan = new alumno(2, 39092552, "Aguero", "Jonatan", LocalDate.of(1995, 9, 10), 1);
+    
+    alumnoData alu2 = new alumnoData();
+    
+    alu2.guardarAlumno(jonatan);
+    
+    //alu2.actualizarAlumno(jonatan);
     }
     
 }
