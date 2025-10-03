@@ -194,4 +194,26 @@ public class alumnoData {
              JOptionPane.showMessageDialog(null, "Error al dar de alta al alumno");
           }
     }
+    private void eliminarAumno (int idAlumno){
+        String query  = "DELETE FROM alumno WHERE idAlumno = ? ";
+  
+            try {
+             PreparedStatement  ps = conn.prepareStatement (query);
+             ps.setInt(1, idAlumno); 
+            int elimina= ps.executeUpdate ();
+            if (elimina == 1){
+            JOptionPane.showMessageDialog(null, "Alumno eliminado correctamente");
+             }else{
+                JOptionPane.showMessageDialog(null, "No se pudo eliminar");
+             }
+             ps.close();
+
+           } catch (SQLException ex) {
+               JOptionPane.showMessageDialog(null, "Error al eliminar al alumno");  
+               
+             
+            }
+         
+            
+        }
 }
