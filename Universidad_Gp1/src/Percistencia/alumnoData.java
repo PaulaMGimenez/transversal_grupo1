@@ -16,8 +16,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -33,17 +31,16 @@ public class alumnoData {
     }
 
     public void guardarAlumno(alumno a){
-        String query = "INSERT INTO alumno(idAlumno, dni, apellido, nombre, fechaNacimiento, estado)"
-                + " VALUES(?,?,?,?,?,?)";
+        String query = "INSERT INTO alumno(dni, apellido, nombre, fechaNacimiento, estado)"
+                + " VALUES(?,?,?,?,?)";
 
         try {
-             PreparedStatement ps = conn.prepareStatement(query,Statement.RETURN_GENERATED_KEYS); 
-                ps.setInt(1, a.getIdAlumno());
-                ps.setInt(2, a.getDni());
-                ps.setString(3, a.getApellido());
-                ps.setString(4, a.getNombre());
-                ps.setDate(5,  Date.valueOf(a.getFechaNacimiento()));
-                ps.setInt(6, a.getEstado());
+             PreparedStatement ps = conn.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);                 
+                ps.setInt(1, a.getDni());
+                ps.setString(2, a.getApellido());
+                ps.setString(3, a.getNombre());
+                ps.setDate(4,  Date.valueOf(a.getFechaNacimiento()));
+                ps.setInt(5, a.getEstado());
                 
                 ps.executeUpdate();
                 
@@ -194,7 +191,7 @@ public class alumnoData {
              JOptionPane.showMessageDialog(null, "Error al dar de alta al alumno");
           }
     }
-    private void eliminarAumno (int idAlumno){
+    public void eliminarAumno (int idAlumno){
         String query  = "DELETE FROM alumno WHERE idAlumno = ? ";
   
             try {

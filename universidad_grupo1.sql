@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-09-2025 a las 00:47:25
+-- Tiempo de generación: 04-10-2025 a las 03:52:21
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -43,7 +43,13 @@ CREATE TABLE `alumno` (
 --
 
 INSERT INTO `alumno` (`idAlumno`, `dni`, `apellido`, `nombre`, `fechaNacimiento`, `estado`) VALUES
-(1, 12345, 'gimenez', 'paula', '2000-08-29', 1);
+(17, 42278291, 'Arce', 'Brayan', '1999-12-16', 1),
+(18, 39092552, 'Aguero', 'Jonatan', '1995-09-10', 1),
+(19, 24681663, 'Giménez', 'Héctor', '1975-11-19', 1),
+(20, 44283749, 'Gomez', 'Santiago', '2001-05-12', 1),
+(21, 41574821, 'Leiza', 'Martin', '1995-10-05', 1),
+(22, 42516816, 'Giménez', 'Paula', '1997-06-15', 1),
+(23, 44285298, 'Alfaro', 'Milagros', '2000-07-18', 1);
 
 -- --------------------------------------------------------
 
@@ -94,6 +100,16 @@ ALTER TABLE `inscripcion`
 --
 ALTER TABLE `materia`
   ADD PRIMARY KEY (`idMateria`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `alumno`
+--
+ALTER TABLE `alumno`
+  MODIFY `idAlumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Restricciones para tablas volcadas
